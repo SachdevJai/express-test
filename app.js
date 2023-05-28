@@ -4,8 +4,11 @@ const app = express();
 const http = require('http');
 const PORT = 3000;
 const route = require('./router.js');
+const bodyParser = require('body-parser');
 
 global.app = app;
+
+app.use(bodyParser.json());
 
 const server = http.createServer(app);
 
